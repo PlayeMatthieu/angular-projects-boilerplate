@@ -1,0 +1,39 @@
+@import "./constants";
+@import "./colors";
+
+// Viewports
+@mixin smallest-phone-portrait {
+  @media only screen and (max-width: 321px) {
+    @content;
+  }
+}
+
+@mixin small-phone-portrait {
+  @media only screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin phone-portrait {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media only screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media only screen and (max-width: 1220px) {
+    @content;
+  }
+}
