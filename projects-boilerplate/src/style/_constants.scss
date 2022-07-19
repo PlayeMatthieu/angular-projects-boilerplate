@@ -4,8 +4,13 @@ $container-medium: 768px;
 $container-small: 576px;
 $large-desktop-container-padding: 40px;
 // padding left & right inside blocks
-$content-padding: 20px;
+$content-padding: 16px;
 // space between blocks
 $wrapper-padding: 10px;
 // border-radius for blocks
 $block-border-radius: 4px;
+
+// fixed element values
+$header-height: 70px;
+$sidebar-min-width: 72px;
+$sidebar-max-width: 150px;

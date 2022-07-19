@@ -2,9 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRouting, routes } from '../app.routing';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [],
-  imports: [CommonModule, AppRouting, RouterModule.forRoot(routes)],
-  exports: [],
+  imports: [
+    CommonModule,
+    AppRouting,
+    RouterModule.forRoot(routes),
+    FontAwesomeModule,
+  ],
+  exports: [FontAwesomeModule, RouterModule],
 })
 export class SharedModule {}

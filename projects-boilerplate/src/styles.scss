@@ -52,35 +52,57 @@ $projects-boilerplate-theme: mat.define-light-theme(
 body {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 app-root {
   display: grid;
   height: 100vh;
   width: 100vw;
-  grid-template-columns: 72px auto;
-  grid-template-rows: 70px auto;
-}
+  grid-template-columns: $sidebar-min-width auto;
+  grid-template-rows: $header-height auto;
 
-#navbar {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  box-shadow: 4px 4px 4px rgba(189, 196, 208, 0.25);
-  z-index: 5;
-}
+  #navbar {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    box-shadow: 4px 4px 4px rgba(189, 196, 208, 0.25);
+    z-index: 5;
+  }
 
-#nav-sidebar {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-  min-width: 42px;
-  max-width: 150px;
-}
+  #nav-sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    min-width: $sidebar-min-width;
+    max-width: $sidebar-max-width;
+  }
 
-[main], router-outlet + * {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  background-color: $wild-sand;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 16px;
+  [main],
+  router-outlet + * {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: $wild-sand;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: $content-padding;
+  }
+
+  @include tablet-portrait {
+    grid-template-columns: 1fr;
+    grid-template-rows: $header-height auto;
+
+    #navbar {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    #nav-sidebar {
+      display: none;
+    }
+
+    [main],
+    router-outlet + * {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+  }
 }

@@ -1,8 +1,63 @@
-@import "../../../../style/colors";
-aside {
+@import "../../../../style/mixins";
+.sidebar--navigation--content {
   background-color: $shark;
   color: $white;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  height: 100vh;
+  .sidebar--navigation--logo {
+    height: $header-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $shuttle-gray;
+
+    p {
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+
+  .sidebar--navigation--list {
+    @include smallest-phone-portrait {
+    }
+    @include small-phone-portrait {
+    }
+    @include phone-portrait {
+    }
+    @include tablet-portrait {
+    }
+    @include tablet-landscape {
+    }
+    @include small-desktop {
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // margin-top: $content-padding;
+
+    .sidebar--navigation--list--link {
+      text-decoration: none;
+      color: $white;
+      padding: $content-padding 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .active {
+        background-color: red;
+        color: $white;
+      }
+
+      &:hover {
+        background-color: $shuttle-gray;
+        cursor: pointer;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
 }

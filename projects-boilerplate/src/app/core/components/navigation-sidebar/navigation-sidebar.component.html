@@ -1,1 +1,19 @@
-<aside>text</aside>
+<aside>
+  <nav class="sidebar--navigation--content">
+    <div class="sidebar--navigation--logo">
+      <p>LOGO</p>
+    </div>
+    <div class="sidebar--navigation--list">
+      <a
+        *ngFor="let link of navigationLinks"
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar--navigation--list--link"
+      >
+        <fa-icon [icon]="link.icon"></fa-icon>
+        <span class="name">{{ link.name }}</span>
+      </a>
+    </div>
+  </nav>
+</aside>
